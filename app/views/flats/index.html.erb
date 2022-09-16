@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <h1>Simple Airbnb</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @flats.each do |flat| %>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text"><%= flat.address %></p>
+            <small><i class="fa-solid fa-euro-sign"> <%= flat.price_per_night %></i></small>
+            <small><i class="fa-solid fa-user-group"> <%= flat.number_of_guests %></i></small>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><%= link_to 'More info', flat_path(flat) %></small>
+          </div>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
